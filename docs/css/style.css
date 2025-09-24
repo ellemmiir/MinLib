@@ -181,6 +181,23 @@ button {
     cursor: pointer;
 }
 
+@media (max-width: 1600px) {
+    .lib__sidebar {
+        width: 20%;
+    }
+
+    .lib__content {
+        width: 80%;
+    }
+
+    .lib__item {
+        margin-bottom: 10px;
+    }
+
+    .lib__item-wrp {
+        padding: 5px;
+    }
+}
 /* Large desktops and laptops */
 /* Portrait tablets and medium desktops */
 /* Portrait tablets and small desktops */
