@@ -1,0 +1,56 @@
+---
+layout: default
+title: Библиотека
+---
+
+<main class="lib">
+  <div class="lib__wrapper">
+    <div class="lib__sidebar">
+      <a class="lib__logo" href="index.html">MinLib</a>
+      <ul class="lib__ul">
+        <li class="lib__li" data-tag="Роман">
+          Романы
+        </li>
+        <li class="lib__li" data-tag="Нейробиология">
+          Нейробиология
+        </li>
+      </ul>
+    </div>
+
+    <div class="lib__content">
+      <div class="lib__box">
+        <p class="lib__text">
+          Что ищем?
+        </p>
+        <div class="lib__input-box">
+          <input class="lib__input" id="searchInput" type="text"
+            placeholder="Введите название, автора или категорию...">
+          <button class="lib__input-btn" id="searchBtn">Поиск</button>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="lib__notfound" id="noResults"></div>
+
+        <div class="lib__books">
+          <div class="lib__item">
+            <a class="lib__item-wrp" href="pdf/1984.pdf" target="_blank">
+              <div class="lib__item-inf">
+                <h4 class="lib__item-author">Джордж Оруэлл</h4>
+                <span class="lib__space">–</span>
+                <h4 class="lib__item-title">1984</h4>
+              </div>
+              <span class="lib__item-tag">Роман</span>
+              <text class="lib__item-descrp">
+                Роман-антиутопия Джорджа Оруэлла о тоталитарном обществе с культом личности партийного лидера Большого
+                Брата, постоянным правительственным контролем повседневной жизни и регулярными войнами.
+              </text>
+            </a>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

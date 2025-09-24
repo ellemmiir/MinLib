@@ -1,0 +1,132 @@
+$white: #ebebeb;
+$black: #000000;
+
+
+%light {
+  font-family: 'Montserrat-Light', sans-serif;
+  font-weight: 300;
+}
+
+%medium {
+  font-family: 'Montserrat-Medium', sans-serif;
+  font-weight: 500;
+}
+
+%semibold {
+  font-family: 'Montserrat-SemiBold', sans-serif;
+  font-weight: 600;
+}
+
+
+.lib {
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+  &__sidebar{
+    width: 15%;
+  }
+  &__logo{
+    display: block;
+    padding: 20px 20px 20px 30px;
+    @extend %semibold;
+    font-size: 30px;
+  }
+  &__ul{
+    padding: 20px;
+  }
+  &__li{
+    padding: 2px 2px 2px 10px;
+    border-radius: 5px;
+    @extend %medium;
+    cursor: pointer;
+    transition: background-color .1s ease-in-out;
+    &:hover{
+      background-color: grey;
+    }
+  }
+
+
+  &__content  {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+  }
+  &__box{
+    padding: 50px;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  &__text{
+    margin-bottom: 10px;
+    @extend %medium;
+    font-size: 30px;
+  }
+  &__input-box{
+    display: flex;
+  }
+  &__input{
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+  }
+  &__input-btn{
+    background-color: $black;
+    color: #fff;
+    padding: 5px 30px;
+    border-radius: 5px;
+  }
+
+
+  &__notfound{
+    display:none; 
+    text-align:center; 
+    margin-top:20px; 
+    font-size:18px; 
+    color:#666;
+  }
+
+
+  &__item{
+    display: none;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  &__item-wrp{
+    display: block;
+    padding: 15px;
+    border-radius: 5px;
+    transition: background-color .1s ease-in-out;
+  }
+  &__item-wrp:hover{
+    background-color: rgb(206, 206, 206);
+  }
+  &__item-inf{
+    display: flex;
+    @extend %medium;
+  }
+  &__space{
+    padding: 0 10px;
+    @extend %semibold;
+  }
+  &__item-tag{
+    display: block;
+    @extend %medium;
+    font-size: 14px;
+  }
+  &__item-descrp{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+}
+
