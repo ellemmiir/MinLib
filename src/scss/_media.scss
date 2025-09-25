@@ -20,12 +20,6 @@ $maxWidth: 1200;
     &__sidebar {
       width: 20%;
     }
-    &__content {
-      width: 80%;
-    }
-    // &__box{
-    //   width: 600px;
-    // }
     &__item{
       margin-bottom: 10px;
     }
@@ -38,7 +32,56 @@ $maxWidth: 1200;
 
 /* Large desktops and laptops */
 /* Portrait tablets and medium desktops */
-@media (max-width: 1200px) {}
+@media (max-width: 1200px) {
+  .container{
+    padding: 0 25px;
+  }
+  .lib{
+    position: relative;
+    &__menu-btn{
+      display: block;
+    }
+    &__box{
+      padding: 25px;
+      width: 100%;
+    }
+    &__sidebar{
+      content: "";
+      position: fixed;
+      opacity: 0;
+      width: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $white;
+      transition: opacity .3s ease-in-out;
+      pointer-events: none;
+      .lib__logo{
+        display: none;
+      }
+      .lib__ul{
+        padding-top: 100px;
+        text-align: center;
+      }
+      .lib__li{
+        padding:7px;
+        &:hover{
+          background-color: $white;
+        }
+      }
+    }
+    &__sidebar.active{
+      opacity: 1;
+      pointer-events: auto;
+    }
+    &__content{
+      width: 100% !important;
+      // flex: 1;
+      border-radius: 0;
+    }
+  }
+}
 
 
 /* Portrait tablets and small desktops */
@@ -46,7 +89,40 @@ $maxWidth: 1200;
 
 
 /* Landscape phones and portrait tablets */
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
+    .container{
+    padding: 0 10px;
+  }
+  .lib{
+    &__box{
+      padding: 10px;
+    }
+    &__input{
+      padding: 15px 5px;
+      &::placeholder{
+        font-size: 12px;
+      }
+    }
+    &__input-btn{
+      padding: 5px 20px;
+    }
+    &__item-inf{
+      flex-direction: column;
+    }
+    &__space{
+      display: none;
+    }
+    &__item-descrp{
+      font-size: 12px;
+    }
+    &__item{
+      margin-bottom: 0;
+    }
+    &__item-wrp:hover{
+      background-color: transparent;
+    }
+  }
+}
 
 
 /* Landscape phones and smaller */

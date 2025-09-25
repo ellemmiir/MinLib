@@ -18,7 +18,60 @@ $black: #000000;
 }
 
 
+.hide{
+  display: none;
+}
+
 .lib {
+  &__menu-btn{
+    position: relative;
+    // display: none;
+    width: 35px;
+    height: 26px;
+    background: transparent;
+    z-index: 10;
+    align-self: flex-start;
+    margin: 20px;
+  }
+   &__menu-btn {
+    position: relative;
+    display: none;
+    width: 35px;
+    height: 26px;
+    background: transparent;
+    z-index: 10;
+  }
+  &__menu-btn::before,
+  &__menu-btn::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    background-color: $black;
+    border-radius: 10px;
+  }
+  &__menu-btn::before {
+    top: 0;
+    box-shadow: 0 11px 0 $black;
+    transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
+  }
+  &__menu-btn::after {
+    bottom: 0;
+    transition: bottom .3s .15s, transform .3s;
+  }
+  .lib__menu-btn.active::before {
+    top: 11px;
+    transform: rotate(45deg);
+    box-shadow: 0 6px 0 rgba(255, 255, 255, 0);
+    transition: box-shadow .15s, top .3s, transform .3s .15s;
+  }
+  .lib__menu-btn.active::after {
+    bottom: 11px;
+    transform: rotate(-45deg);
+    transition: bottom .3s, transform .3s .15s;
+  }
   &__wrapper{
     display: flex;
     justify-content: space-between;
@@ -81,6 +134,10 @@ $black: #000000;
     padding: 12px 16px;
     border: 2px solid #ccc;
     border-radius: 5px;
+  }
+  &__input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #000000; 
   }
   &__input-btn{
     background-color: $black;

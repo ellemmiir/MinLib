@@ -13,6 +13,64 @@ body {
     font-weight: 600;
 }
 
+.hide {
+    display: none;
+}
+
+.lib__menu-btn {
+    position: relative;
+    width: 35px;
+    height: 26px;
+    background: transparent;
+    z-index: 10;
+    align-self: flex-start;
+    margin: 20px;
+}
+
+.lib__menu-btn {
+    position: relative;
+    display: none;
+    width: 35px;
+    height: 26px;
+    background: transparent;
+    z-index: 10;
+}
+
+.lib__menu-btn::before, .lib__menu-btn::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    background-color: #000000;
+    border-radius: 10px;
+}
+
+.lib__menu-btn::before {
+    top: 0;
+    box-shadow: 0 11px 0 #000000;
+    transition: box-shadow 0.3s 0.15s, top 0.3s 0.15s, transform 0.3s;
+}
+
+.lib__menu-btn::after {
+    bottom: 0;
+    transition: bottom 0.3s 0.15s, transform 0.3s;
+}
+
+.lib .lib__menu-btn.active::before {
+    top: 11px;
+    transform: rotate(45deg);
+    box-shadow: 0 6px 0 rgba(255, 255, 255, 0);
+    transition: box-shadow 0.15s, top 0.3s, transform 0.3s 0.15s;
+}
+
+.lib .lib__menu-btn.active::after {
+    bottom: 11px;
+    transform: rotate(-45deg);
+    transition: bottom 0.3s, transform 0.3s 0.15s;
+}
+
 .lib__wrapper {
     display: flex;
     justify-content: space-between;
@@ -81,6 +139,11 @@ body {
     padding: 12px 16px;
     border: 2px solid #ccc;
     border-radius: 5px;
+}
+
+.lib__input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #000000;
 }
 
 .lib__input-btn {
@@ -190,10 +253,6 @@ button {
         width: 20%;
     }
 
-    .lib__content {
-        width: 80%;
-    }
-
     .lib__item {
         margin-bottom: 10px;
     }
@@ -204,8 +263,112 @@ button {
 }
 /* Large desktops and laptops */
 /* Portrait tablets and medium desktops */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 25px;
+    }
+
+    .lib {
+        position: relative;
+    }
+
+    .lib__menu-btn {
+        display: block;
+    }
+
+    .lib__box {
+        padding: 25px;
+        width: 100%;
+    }
+
+    .lib__sidebar {
+        content: "";
+        position: fixed;
+        opacity: 0;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ebebeb;
+        transition: opacity 0.3s ease-in-out;
+        pointer-events: none;
+    }
+
+    .lib__sidebar .lib__logo {
+        display: none;
+    }
+
+    .lib__sidebar .lib__ul {
+        padding-top: 100px;
+        text-align: center;
+    }
+
+    .lib__sidebar .lib__li {
+        padding: 7px;
+    }
+
+    .lib__sidebar .lib__li:hover {
+        background-color: #ebebeb;
+    }
+
+    .lib__sidebar.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .lib__content {
+        width: 100% !important;
+        border-radius: 0;
+    }
+}
 /* Portrait tablets and small desktops */
 /* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .lib__box {
+        padding: 10px;
+    }
+
+    .lib__input {
+        padding: 15px 5px;
+    }
+
+    .lib__input::-moz-placeholder {
+        font-size: 12px;
+    }
+
+    .lib__input::placeholder {
+        font-size: 12px;
+    }
+
+    .lib__input-btn {
+        padding: 5px 20px;
+    }
+
+    .lib__item-inf {
+        flex-direction: column;
+    }
+
+    .lib__space {
+        display: none;
+    }
+
+    .lib__item-descrp {
+        font-size: 12px;
+    }
+
+    .lib__item {
+        margin-bottom: 0;
+    }
+
+    .lib__item-wrp:hover {
+        background-color: transparent;
+    }
+}
 /* Landscape phones and smaller */
 html {
     box-sizing: border-box;
